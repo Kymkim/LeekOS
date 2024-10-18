@@ -12,7 +12,7 @@
       modules = [
         ./hosts/default/configuration.nix
         ./modules/core/hyprland.nix
-	     
+	./modules/app/obsidian.nix	     
       ];
     };
   };
