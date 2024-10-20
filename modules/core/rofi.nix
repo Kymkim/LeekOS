@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
 	environment.systemPackages = [
-		pkgs.obsidian
+		pkgs.rofi-wayland
 	];
 }

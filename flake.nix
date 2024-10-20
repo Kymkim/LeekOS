@@ -6,13 +6,18 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/default/configuration.nix
         ./modules/core/hyprland.nix
+	./modules/core/rofi.nix
 	./modules/app/obsidian.nix	     
+	./modules/app/vscodium.nix
+	./modules/app/discord.nix
+	./modules/app/obs-studio.nix
+#	./modules/app/bitwarden.nix #Bitwarden seems to unable to compile in the unstable channel
       ];
     };
   };
