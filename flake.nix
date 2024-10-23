@@ -13,23 +13,34 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
 	in {
+
+	#NixOsConfigurations contains all of the applications that I need
+	#In my case I have two config, one for my FrameworkLaptop16 and one for my PC
+
 	nixosConfigurations = {
-		workstation = lib.nixosSystem {
+		default = lib.nixosSystem {
 			inherit system;
 			specialArgs = {inherit inputs;};
 			modules = [
 				./hosts/default/configuration.nix
-				./modules/core/hyprland.nix
-				./modules/core/rofi.nix
-				./modules/core/audio.nix
+			];
+		};
+		fw16 = lib.nixosSystem {
+			inherit system;
+			specialArgs = {inherit inputs;};
+			modules = [
+				./hosts/framework16/configuration.nix	
 			];
 		};
 	};
+
+	#HomeConfiguration is mainly here for configuring dotfiles. Other
+
 	homeConfigurations = {
 		default =  home-manager.lib.homeManagerConfiguration { 
 			inherit pkgs;
 			modules = [
-				./home-manager/default.nix
+				./hosts/default/home.nix
 			];
 		};
 	};
