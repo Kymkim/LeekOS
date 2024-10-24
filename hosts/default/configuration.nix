@@ -63,13 +63,17 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   #Enable Hyprland
-  programs.hyrpland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     
     #You need these for sure
     kitty        
     rofi-wayland
+    xfce.thunar
 
     #Generally good to have in your system
     git
