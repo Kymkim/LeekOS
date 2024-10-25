@@ -6,7 +6,10 @@ This is still under development and there are alot of things I need to work on.
 
 If you want to check out the latest updates please check development branch
 
-To-Do:
-- Basic Hyprland Config
-	- Window Borders
-	- Keybinds
+# The Update Wall
+
+## v0.0.1
+- Added Hyprland
+- Added this Read-Me File
+- Added some apps that I like
+- A basic modular set-up for iles

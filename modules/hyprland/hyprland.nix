@@ -3,7 +3,7 @@
 
   options = {
     hyprland.enable = lib.mkEnableOption "Enables Hyprland";
-  }
+  };
 
   config = lib.mkIf config.hyprland.enable {
     # ░  ░░░░  ░░  ░░░░  ░░       ░░░       ░░░  ░░░░░░░░░      ░░░   ░░░  ░░       ░░
@@ -92,7 +92,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 0;
         "col.shadow" = "rgba(e1288555)";
         "col.shadow_inactive" = "rgba(FFFFFF00)";
         drop_shadow = true;
