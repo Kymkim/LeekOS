@@ -8,7 +8,7 @@
   home.stateVersion = "24.05";
 
   imports = [
-    ../../modules/default.nix
+    ../../modules/home-manager/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -34,5 +34,7 @@
 #   bitwarden   #Password manager: Bitwarden does not want to compile lately. No clue why...
   ];
 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+  };
 }

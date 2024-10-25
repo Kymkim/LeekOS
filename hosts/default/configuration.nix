@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos/default.nix
     ];
 
   # Bootloader.
@@ -70,8 +71,7 @@
 
   environment.systemPackages = with pkgs; [
     
-    #You need these for sure
-    kitty        
+    #You need these for sure   
     rofi-wayland
     xfce.thunar
 
@@ -86,6 +86,8 @@
     gh          #GitHub CLI Tool
     blueberry   #GUI for configuring Bluetooth Devices
     pavucontrol #GUI for PulseAudio 
+
+    nerdfonts
 
   ];
 
