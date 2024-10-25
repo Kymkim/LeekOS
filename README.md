@@ -8,6 +8,11 @@ If you want to check out the latest updates please check development branch
 
 # The Update Wall
 
+## v0.0.2
+- Terminal configuration!
+- More hotkeys!
+- Screenshots :3
+
 ## v0.0.1
 - Added Hyprland
 - Added this Read-Me File
