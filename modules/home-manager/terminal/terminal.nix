@@ -124,7 +124,7 @@
 
       settings = {
         window_padding_width = 20;
-        background_opacity = 0.75;
+        background_opacity = 0.8;
         shell = lib.mkIf config.zsh.enable "zsh";
       };
 

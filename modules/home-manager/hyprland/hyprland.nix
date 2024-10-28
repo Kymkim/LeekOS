@@ -41,6 +41,7 @@
 
       exec-once = [
         "hyprpaper"
+        "ags"
       ];
 
       # __     __         _       _     _           
@@ -87,7 +88,7 @@
         ########################################################################################
         # Left Hand Keybind Mapping                                                            #
         # Mod + Key:                                                                           #
-        # Q           W                 E=email         R                 T=terminal(kitty)    #
+        # Q=togglebar W                 E=email         R                 T=terminal(kitty)    #
         # A           S=steam           D=discord       F=firefox         G                    #
         # Z=float     X=fullscreen      C               V=codiun          B=bluesky            #
         #                                                                                      #
@@ -103,7 +104,7 @@
         ########################################################################################
 
         # Mod + Key
-        #"$mod, Q, exec, $mikuwiki"
+        "$mod, Q, exec, ags -t bar"
         #"$mod, W, exec, $mikuwiki"
         "$mod, E, exec, $email"
         #"$mod, R, exec, $mikuwiki"
@@ -269,7 +270,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 10;
         "col.shadow" = "rgba(e1288555)";
         "col.shadow_inactive" = "rgba(FFFFFF00)";
         drop_shadow = true;

@@ -46,4 +46,18 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 			};
 		};
 	};
+
+	#Is it Miku Flow Chart
+	#
+	#twin tails?
+	# |     |
+	# yes   no
+	# |     |
+	# |     not miku.
+	# |
+	# is it blue?
+	# |     |
+	# yes   no
+	# |     |
+	# its miku regardless.
 }

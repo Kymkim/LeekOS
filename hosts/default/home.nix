@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
 
+# Mainly used for declaratively setting themes and desktop environment stuff. Nothing else
+
 {
 
   home.username = "ukimnix";
@@ -11,28 +13,7 @@
     ../../modules/home-manager/default.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-  # ░░      ░░░       ░░░       ░░░░      ░░
-  # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
-  # ▓  ▓▓▓▓  ▓▓       ▓▓▓       ▓▓▓▓      ▓▓
-  # █        ██  ████████  ██████████████  █
-  # █  ████  ██  ████████  █████████      ██
-
-  ########################################################                                      
-  # Applications for my workstation.                     #
-  #Of course, feel free to remove if you dont need these #
-  ########################################################
-
-  home.packages = with pkgs; [
-	  obsidian    #Note taking app
-    vscodium    #Coding app
-    discord     #Chat application
-    obs-studio  #Screen recording/streaming software
-    zoom-us     #Online conference calls
-    unityhub    #App for managing Unity Project and installation
-#   bitwarden   #Password manager: Bitwarden does not want to compile lately. No clue why...
-  ];
+  nixpkgs.config.allowUnfree = true; 
 
   programs = {
     home-manager.enable = true;

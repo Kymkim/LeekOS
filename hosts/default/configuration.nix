@@ -69,11 +69,32 @@
     xwayland.enable = true;
   };
 
+  # ░░      ░░░       ░░░       ░░░░      ░░
+  # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
+  # ▓  ▓▓▓▓  ▓▓       ▓▓▓       ▓▓▓▓      ▓▓
+  # █        ██  ████████  ██████████████  █
+  # █  ████  ██  ████████  █████████      ██
+
+  #########################################################                                      
+  # Applications. I dont really see a point               #
+  # on having these on the home.nix. I only have one      #
+  # user on my PC which is me...                          #
+  # Of course, feel free to remove if you dont need these #
+  #########################################################
+
+  steam.enable = true;
+
   environment.systemPackages = with pkgs; [
     
+    #Will move all of these as a separate .nix for modularity later
     #You need these for sure   
-    rofi-wayland
-    xfce.thunar
+    rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
+    xfce.thunar   #File Manager
+    nerdfonts     #Icons as fonts
+    pywal         #For getting screen colors
+    nwg-look      #For setting GTK themes
+    pavucontrol   #GUI for PulseAudio 
+    blueberry     #GUI for configuring Bluetooth Devices
 
     #Generally good to have in your system
     git
@@ -81,15 +102,22 @@
     wget
     curl
     firefox
+    killall     
 
     #Optional. Comment these out if not needed
-    gh          #GitHub CLI Tool
-    blueberry   #GUI for configuring Bluetooth Devices
-    pavucontrol #GUI for PulseAudio 
-
-    nerdfonts
+    gh                        #GitHub CLI Tool
+    obsidian                  #Note taking app
+    vscodium                  #Coding app
+    discord                   #Chat application
+    obs-studio                #Screen recording/streaming software
+    zoom-us                   #Online conference calls
+    unityhub                  #App for managing Unity Project and installation
+    inkscape-with-extensions  #App for editing SVGs
+    
 
   ];
+
+
 
   environment.variables.EDITOR = "vim";
 
