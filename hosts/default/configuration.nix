@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 # I USE DVORAK KEYBOARD LAYOUT. MOST PEOPLE DONT! PS CHANGE THE KEYBOARD LAYOUT!
 
@@ -51,6 +51,8 @@
     layout = "us";
     variant = "dvorak";
   };
+
+  console.keyMap = "dvorak";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ukimnix = {

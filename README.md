@@ -6,6 +6,8 @@ This is still under development and there are alot of things I need to work on.
 
 If you want to check out the latest updates please check development branch
 
+## I USE DVORAK KEYBOARD LAYOUT. PS CHANGE IT ON YOUR x11kb CONFIGURATION on configuration.nix AND set hyprland.useDvorak = false;
+
 # The Update Wall
 
 ## v0.0.2

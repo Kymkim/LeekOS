@@ -18,6 +18,7 @@
   options.hyprland = {
     enable = lib.mkEnableOption "Enables Hyprland";
     FW16config = lib.mkEnableOption "Use the Framework 16 laptop configuration";
+    useDvorak = lib.mkEnableOption "Enable dvorak layout for Hyprland";
   };
 
   config = lib.mkIf config.hyprland.enable { 
@@ -44,8 +45,14 @@
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.settings = {
 
-      #Disable fractional scaling cause XWayland sucks
+      #Disable fractional scaling on Framework16 cause XWayland sucks
       monitor = lib.mkIf config.hyprland.FW16config "eDP-1, 2560x1600@165, 0x0, 1";
+
+      #Use dvorak when enabled
+      input = lib.mkIf config.hyprland.useDvorak {
+        kb_layout = "us";
+        kb_variant = "dvorak";
+      };
 
       exec-once = [
         "hyprpaper"
@@ -81,7 +88,9 @@
       ###################################################################
       # My keybinds for my computer are based off ortholinear keyboard  #
       # such as the Work Louder Keyboard so it might not make sense for #
-      # you. Right hand shortcuts are common hotkeys i want to run.     #
+      # you. I also use dvorak layout but keybinds are binded by        #
+      # keycode rather than character                                   #
+      # Right hand shortcuts are common hotkeys i want to rul           #
       # Left hand shortkinds are for less common hotkeys                #
       # Feel free to reconfigure.                                       #
       ###################################################################

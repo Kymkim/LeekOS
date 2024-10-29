@@ -14,6 +14,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true; 
+  hyprland.useDvorak = true;
 
   programs = {
     home-manager.enable = true;
