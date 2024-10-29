@@ -10,10 +10,12 @@
   home.stateVersion = "24.05";
 
   imports = [
-    ../../modules/home-manager/framework16.nix
+    ../../modules/home-manager/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true; 
+
+  hyprland.FW16config = true;
 
   programs = {
     home-manager.enable = true;

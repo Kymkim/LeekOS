@@ -15,11 +15,13 @@
 
 {
 
-  options = {
-    hyprland.enable = lib.mkEnableOption "Enables Hyprland";
+  options.hyprland = {
+    enable = lib.mkEnableOption "Enables Hyprland";
+    FW16config = lib.mkEnableOption "Use the Framework 16 laptop configuration";
   };
 
   config = lib.mkIf config.hyprland.enable { 
+    
 
     home.packages = with pkgs; [
       hyprpaper
@@ -30,7 +32,10 @@
       enable = true;
       settings = {
         preload = "/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg";
-        wallpaper = "HDMI-A-1, /etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg";
+        wallpaper = lib.mkMerge [
+          (lib.mkIf config.hyprland.FW16config "eDP-1, /etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg")
+          (lib.mkIf (!config.hyprland.FW16config) "HDMI-A-1, /etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg")
+        ];
       };
     };
 
@@ -38,6 +43,9 @@
 
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.settings = {
+
+      #Disable fractional scaling cause XWayland sucks
+      monitor = lib.mkIf config.hyprland.FW16config "eDP-1, 2560x1600@165, 0x0, 1";
 
       exec-once = [
         "hyprpaper"
@@ -262,7 +270,10 @@
       ######################################################
 
       general = {
-        border_size = 3;
+        border_size = lib.mkMerge [
+          (lib.mkIf config.hyprland.FW16config 6)
+          (lib.mkIf (!config.hyprland.FW16config) 3)
+        ];
         gaps_in = 5;
         gaps_out = 20;
         "col.active_border" = "rgba(2cf5f5ff) rgba(e12885ee) 45deg";
@@ -274,8 +285,14 @@
         "col.shadow" = "rgba(e1288555)";
         "col.shadow_inactive" = "rgba(FFFFFF00)";
         drop_shadow = true;
-        shadow_range = 10;
-        shadow_render_power = 3;
+        shadow_range = lib.mkMerge [
+          (lib.mkIf config.hyprland.FW16config 20)
+          (lib.mkIf (!config.hyprland.FW16config) 10)
+        ];
+        shadow_render_power = lib.mkMerge [
+          (lib.mkIf config.hyprland.FW16config 6)
+          (lib.mkIf (!config.hyprland.FW16config) 3)
+        ];
       };
 
       # ░  ░░░░  ░░        ░░   ░░░  ░░░░░░░░       ░░░  ░░░░  ░░  ░░░░░░░░        ░░░      ░░

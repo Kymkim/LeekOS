@@ -7,6 +7,7 @@
       ../../modules/nixos/default.nix
       inputs.home-manager.nixosModules.default
     ];
+    
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

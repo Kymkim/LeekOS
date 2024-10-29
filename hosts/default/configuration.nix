@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 
+# I USE DVORAK KEYBOARD LAYOUT. MOST PEOPLE DONT! PS CHANGE THE KEYBOARD LAYOUT!
+
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/default.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -46,7 +49,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
+    variant = "dvorak";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -67,6 +70,14 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "ukimnix" = import ./home.nix;
+    };
+    backupFileExtension = "backup";
   };
 
   # ░░      ░░░       ░░░       ░░░░      ░░
