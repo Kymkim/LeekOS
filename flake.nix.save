@@ -23,7 +23,6 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 				specialArgs = {inherit inputs;};
 				modules = [
 					./hosts/default/configuration.nix
-					inputs.home-manager.nixosModules.default
 				];
 			};
 			fw16 = lib.nixosSystem {
@@ -31,9 +30,21 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 				specialArgs = {inherit inputs;};
 				modules = [
 					./hosts/framework16/configuration.nix	
-					inputs.home-manager.nixosModules.default
 				];
 			};
+		};
+
+		#HomeConfiguration is mainly here for configuring dotfiles. Other
+
+		homeConfigurations = {
+			default =  home-manager.lib.homeManagerConfiguration { 
+				inherit pkgs;
+				extraSpecialArgs = {inherit inputs;};
+				modules = [
+					./hosts/default/home.nix
+				];
+			};
+
 		};
 	};
 
