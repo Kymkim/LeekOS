@@ -1,0 +1,32 @@
+- fixed read me typo
+- updated readme
+- merged from dev branch
+- readme update
+- framework uses mozc by default
+- fcitx5 japanes mozc support
+- colemak switch and qwert
+- printer support
+- printer support part 2
+- printer support
+- framwork16 configuration minor fixes
+- fw16update
+- removed dvorak.
+- comment changes
+- rebuild stuff
+- i was using home manager stand alone all this time wtf
+- stuf
+- updated readme
+- some terminal changes
+- modules and readme.md update!
+- learned how to activate and deactivate modules
+- deleted stuff we dont neet
+- hyprland borders!
+- hyprland borders!
+- Home-manager and some restructureing
+- home manager added
+- Home Manager Initialization
+- README.md change
+- Edited README.md
+- Added basic applications
+- Added Obsidian
+- first commit
