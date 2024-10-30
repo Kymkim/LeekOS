@@ -92,7 +92,7 @@
   #########################################################
 
   steam.enable = true;
-  printing.enable = true;
+  printer.enable = true;
 
   environment.systemPackages = with pkgs; [
     
