@@ -50,8 +50,9 @@
 
       #Use dvorak when enabled
       input = {
-        kb_layout = "us";
-        kb_variant = lib.mkIf config.hyprland.useDvorak "dvorak";
+        kb_layout = "us, us";
+        kb_variant = " , colemak";
+        kb_options = "grp:alt_shift_toggle";
         touchpad = lib.mkIf config.hyprland.FW16config {
           natural_scroll = true;
           drag_lock = true;
