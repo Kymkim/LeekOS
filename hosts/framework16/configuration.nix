@@ -93,6 +93,7 @@
 
   steam.enable = true;
   printer.enable = true;
+  fcitx5.enable = true;
 
   environment.systemPackages = with pkgs; [
     

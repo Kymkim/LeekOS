@@ -5,6 +5,7 @@
     imports = [
         ./steam/steam.nix
         ./printing/printer.nix
+        ./fcitx5/fcitx5.nix
     ];
     
 }
