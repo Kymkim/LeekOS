@@ -83,7 +83,6 @@
     backupFileExtension = "backup";
   };
 
-  services.printing.enable = true;
 
   # ░░      ░░░       ░░░       ░░░░      ░░
   # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
@@ -99,6 +98,7 @@
   #########################################################
 
   steam.enable = true;
+  printing.enable = true;
 
   environment.systemPackages = with pkgs; [
     
