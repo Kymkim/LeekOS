@@ -4,6 +4,7 @@
 {
     imports = [
         ./steam/steam.nix
+        ./printing/printer.nix
     ];
     
 }

@@ -83,6 +83,8 @@
     backupFileExtension = "backup";
   };
 
+  services.printing.enable = true;
+
   # ░░      ░░░       ░░░       ░░░░      ░░
   # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
   # ▓  ▓▓▓▓  ▓▓       ▓▓▓       ▓▓▓▓      ▓▓
