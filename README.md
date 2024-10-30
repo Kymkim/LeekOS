@@ -6,9 +6,18 @@ This is still under development and there are alot of things I need to work on.
 
 If you want to check out the latest updates please check development branch
 
-## I USE DVORAK KEYBOARD LAYOUT. PS CHANGE IT ON YOUR x11kb CONFIGURATION on configuration.nix AND set hyprland.useDvorak = false;
+# Todo:
+- AGS Bar
+- Obviously organize the folders
+- GPU passthrough configuration for workstation
 
 # The Update Wall
+
+## v0.0.3
+- Added framework config
+- Added Japanese mozc for japanese typing
+- Added colemak as secondary input
+- More application stuff
 
 ## v0.0.2
 - Terminal configuration!
