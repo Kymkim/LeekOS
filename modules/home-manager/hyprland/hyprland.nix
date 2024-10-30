@@ -18,7 +18,7 @@
   options.hyprland = {
     enable = lib.mkEnableOption "Enables Hyprland";
     FW16config = lib.mkEnableOption "Use the Framework 16 laptop configuration";
-    useDvorak = lib.mkEnableOption "Enable dvorak layout for Hyprland";
+    Fcitx5.enable = lib.mkEnableOption "Start Fcitx5 on boot";
   };
 
   config = lib.mkIf config.hyprland.enable { 
@@ -70,6 +70,8 @@
       exec-once = [
         "hyprpaper"
         "ags"
+        (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5 -d -r")
+        (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5-remote-r")
       ];
 
       # __     __         _       _     _           
@@ -300,7 +302,10 @@
       # Guide: https://wiki.hyprland.org/Configuring/Window-Rules/                           #
       ########################################################################################
 
-      windowrule = "float, ^(kitty)$";
+      windowrule = [
+        "float, ^(kitty)$"
+        (lib.mkIf config.hyprland.Fcitx5.enable "pseudo, fcitx")
+      ];
                                                                                       
     };
   };
