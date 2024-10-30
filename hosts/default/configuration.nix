@@ -49,10 +49,11 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "dvorak";
+    #variant = "dvorak";
   };
 
-  console.keyMap = "dvorak";
+  #console.keyMap = "dvorak";
+  console.keyMap = "us";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ukimnix = {
