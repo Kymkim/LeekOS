@@ -7,6 +7,7 @@
         ./printing/printer.nix
         ./fcitx5/fcitx5.nix
         ./virt/virt.nix
+        ./thunar/thunar.nix
     ];
     
 }

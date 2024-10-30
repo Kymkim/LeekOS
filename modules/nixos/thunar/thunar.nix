@@ -14,8 +14,11 @@
           thunar-archive-plugin
           thunar-volman
         ];
-      }
+      };
     };
+    environment.systemPackages = with pkgs; [
+      file-roller
+    ];
   };
 
 }
