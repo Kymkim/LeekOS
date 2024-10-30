@@ -7,7 +7,6 @@
       ../../modules/nixos/default.nix
       inputs.home-manager.nixosModules.default
     ];
-    
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -60,11 +59,11 @@
   };
 
   home-manager = {
-	extraSpecialArgs = {inherit inputs;};
-	users = {
-		"ukimnix" = import ./home.nix;
-	};
-	backupFileExtension = "backup";
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "ukimnix" = import ./home.nix;
+    };
+    backupFileExtension = "backup";
   };
 
   # Allow unfree packages

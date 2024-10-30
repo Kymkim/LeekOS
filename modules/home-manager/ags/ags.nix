@@ -7,7 +7,7 @@
   # █  ████  ███      ████      ██
                                                                          
   ###################################################################################
-  # Aylur's GTK Shell fir creating fucntional wayland widgets :)                    #
+  # Aylur's GTK Shell for creating fucntional wayland widgets :)                    #
   #                                                                                 #
   #                                                                                 #
   # Website: https://aylur.github.io/ags-docs/                                      #

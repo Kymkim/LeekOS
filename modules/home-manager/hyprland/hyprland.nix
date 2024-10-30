@@ -52,6 +52,18 @@
       input = lib.mkIf config.hyprland.useDvorak {
         kb_layout = "us";
         kb_variant = "dvorak";
+        touchpad = lib.mkIf config.hyprland.FW16config {
+          natural_scroll = true;
+          drag_lock = true;
+        };
+      };
+
+      gestures = lib.mkIf config.hyprland.FW16config{
+        workspace_swipe = true;
+      };  
+
+      cursor = {
+        enable_hyprcursor = false; #TODO: add hypercursor
       };
 
       exec-once = [
