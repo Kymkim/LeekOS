@@ -15,4 +15,5 @@
     starship.enable = lib.mkDefault true;
     zsh.enable = lib.mkDefault true;
     ags.enable = lib.mkDefault true;
+    terminal.FW16config = lib.mkDefault false;
 }

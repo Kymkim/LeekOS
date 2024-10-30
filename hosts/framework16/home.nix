@@ -16,6 +16,7 @@
   nixpkgs.config.allowUnfree = true; 
 
   hyprland.FW16config = true;
+  terminal.FW16config = true;
 
   programs = {
     home-manager.enable = true;

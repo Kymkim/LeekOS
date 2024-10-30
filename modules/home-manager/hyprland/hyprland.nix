@@ -49,9 +49,9 @@
       monitor = lib.mkIf config.hyprland.FW16config "eDP-1, 2560x1600@165, 0x0, 1";
 
       #Use dvorak when enabled
-      input = lib.mkIf config.hyprland.useDvorak {
+      input = {
         kb_layout = "us";
-        kb_variant = "dvorak";
+        kb_variant = lib.mkIf config.hyprland.useDvorak "dvorak";
         touchpad = lib.mkIf config.hyprland.FW16config {
           natural_scroll = true;
           drag_lock = true;
@@ -97,40 +97,11 @@
       # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|___/
       #           |___/                         
 
-      ###################################################################
-      # My keybinds for my computer are based off ortholinear keyboard  #
-      # such as the Work Louder Keyboard so it might not make sense for #
-      # you. I also use dvorak layout but keybinds are binded by        #
-      # keycode rather than character                                   #
-      # Right hand shortcuts are common hotkeys i want to rul           #
-      # Left hand shortkinds are for less common hotkeys                #
-      # Feel free to reconfigure.                                       #
-      ###################################################################
+      #Mappings can be found on bindings file
 
       bind = [
-        #Special Keys
         "$mod, ESCAPE, killactive"
         "$mod, SPACE, exec, rofi -show drun"  #App launcher
-
-        #Unassinged ones launches (for now) hatsune miku wikipedia lol..
-
-        ########################################################################################
-        # Left Hand Keybind Mapping                                                            #
-        # Mod + Key:                                                                           #
-        # Q=togglebar W                 E=email         R                 T=terminal(kitty)    #
-        # A           S=steam           D=discord       F=firefox         G                    #
-        # Z=float     X=fullscreen      C               V=codiun          B=bluesky            #
-        #                                                                                      #
-        # Mod + Shift + Key:                                                                   #
-        # Q=hyprshot  W=hyprshotWindow E=hyprshotActive R=hyprshotRegion  T=                   #  #Saves to clipboard only
-        # A           S=               D=               F=                G                    #
-        # Z=          X=               C                V=                B=                   #
-        #                                                                                      #
-        # Mod + Shift + Ctrl + Key:                                                            #
-        # Q=hyprshot  W=hyprshotWindow E=hyprshotActive R=hyprshotRegion  T=                   #  #Saves to device
-        # A           S=               D=               F=                G                    #
-        # Z=          X=               C                V=                B=                   #
-        ########################################################################################
 
         # Mod + Key
         "$mod, Q, exec, ags -t bar"

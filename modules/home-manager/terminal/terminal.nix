@@ -22,6 +22,7 @@
     kitty.enable = lib.mkEnableOption "Enables Kitty";
     starship.enable = lib.mkEnableOption "Enables Starship";
     zsh.enable = lib.mkEnableOption "Enables ZSH";
+    terminal.FW16config = lib.mkEnableOption "Use Framework 16 configuration";
   };
 
   config = {
@@ -126,6 +127,7 @@
         window_padding_width = 20;
         background_opacity = 0.8;
         shell = lib.mkIf config.zsh.enable "zsh";
+        font_size = lib.mkIf config.terminal.FW16config 13.5;
       };
 
     };

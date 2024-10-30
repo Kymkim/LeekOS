@@ -112,6 +112,7 @@
     curl
     firefox
     killall     
+    python313
 
     #Optional. Comment these out if not needed
     gh                        #GitHub CLI Tool
