@@ -94,13 +94,14 @@
   steam.enable = true;
   printer.enable = true;
   fcitx5.enable = true;
+  vms.enable = true;
+  thunar.enable = true;
 
   environment.systemPackages = with pkgs; [
     
     #Will move all of these as a separate .nix for modularity later
     #You need these for sure   
     rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
-    xfce.thunar   #File Manager
     nerdfonts     #Icons as fonts
     pywal         #For getting screen colors
     nwg-look      #For setting GTK themes
@@ -113,8 +114,9 @@
     wget
     curl
     firefox
-    killall     
-    python313
+    killall
+    python312
+    python312Packages.dbus-python     
 
     #Optional. Comment these out if not needed
     gh                        #GitHub CLI Tool
