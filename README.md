@@ -1,6 +1,6 @@
 # HyprMikuOS
 
-Hello! This is a lil personal project I have been working on. This is a custom NixOS Hyprland rice inspired by Hatsune Miku!s
+Hello! This is a lil personal project I have been working on. This is a custom NixOS Hyprland rice inspired by Hatsune Miku!
 
 ![Hatsune Miku!](./miku.png)
 
