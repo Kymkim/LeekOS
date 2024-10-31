@@ -103,7 +103,6 @@
     #You need these for sure   
     rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
     nerdfonts     #Icons as fonts
-    pywal         #For getting screen colors
     nwg-look      #For setting GTK themes
     pavucontrol   #GUI for PulseAudio 
     blueberry     #GUI for configuring Bluetooth Devices

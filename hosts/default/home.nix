@@ -15,6 +15,10 @@
 
   nixpkgs.config.allowUnfree = true; 
 
+  hyprland.Fcitx5.enable = true;
+  
+  programs.pywal.enable = true;
+
   programs = {
     home-manager.enable = true;
   };
