@@ -22,10 +22,6 @@ label {
     font-weight: bold;
 }
 
-.workspaces button.focused {
-    border-bottom: 3px solid @theme_selected_bg_color;
-}
-
 .client-title {
     color: @theme_selected_bg_color;
 }

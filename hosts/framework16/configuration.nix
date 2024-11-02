@@ -126,8 +126,8 @@
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     inkscape-with-extensions  #App for editing SVGs
+    bottles
     
-
   ];
 
 

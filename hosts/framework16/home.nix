@@ -25,4 +25,6 @@
   programs = {
     home-manager.enable = true;
   };
+
+  gtk-theme.enable = true;
 }

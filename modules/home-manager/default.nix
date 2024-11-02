@@ -6,6 +6,7 @@
         ./hyprland/hyprland.nix
         ./terminal/terminal.nix
         ./ags/ags.nix
+        ./gtk/gtk.nix
     ];
 
     #Everything is enabled by default.
