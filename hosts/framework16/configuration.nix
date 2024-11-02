@@ -78,6 +78,11 @@
     xwayland.enable = true;
   };
 
+  # Lady bird fails to compile atm
+  # programs = {
+  #   ladybird.enable = true;
+  # };
+
   # ░░      ░░░       ░░░       ░░░░      ░░
   # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒
   # ▓  ▓▓▓▓  ▓▓       ▓▓▓       ▓▓▓▓      ▓▓
