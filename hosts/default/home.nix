@@ -6,6 +6,8 @@
 
   home.username = "ukimnix";
   home.homeDirectory = "/home/ukimnix";
+  
+  gtk-theme.enable = true;
 
   home.stateVersion = "24.05";
 

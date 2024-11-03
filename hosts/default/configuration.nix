@@ -8,7 +8,6 @@
 
   steam.enable = true;
   printer.enable = true;
-  gtk-theme.enable = true;
   vms.enable = true;
   thunar.enable = true;
   
