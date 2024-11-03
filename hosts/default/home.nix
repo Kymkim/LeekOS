@@ -7,7 +7,6 @@
   home.username = "ukimnix";
   home.homeDirectory = "/home/ukimnix";
   
-  gtk-theme.enable = true;
 
   home.stateVersion = "24.05";
 
@@ -24,4 +23,6 @@
   programs = {
     home-manager.enable = true;
   };
+
+  gtk-theme.enable = true;
 }
