@@ -35,7 +35,6 @@
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     bottles
-    minecraft
   ];
 
   # Fonts
