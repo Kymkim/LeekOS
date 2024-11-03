@@ -71,6 +71,9 @@
       powerOnBoot = true;
     };
 
+    # Audio
+    hardware.pulseaudio.enable = true;
+
     # Polkit
     security.polkit.enable = true;
 

@@ -64,6 +64,9 @@
       hostName = "MikuOS"; 
       networkmanager.enable = true;
     };
+
+    # Audio
+    hardware.pulseaudio.enable = true;
     
     # Bluetooth
     hardware.bluetooth = {
