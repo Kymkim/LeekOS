@@ -36,7 +36,6 @@
     inkscape-with-extensions  #App for editing SVGs
     kdePackages.kdenlive
     bottles
-    minecraft
   ];
 
 
