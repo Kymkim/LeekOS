@@ -29,10 +29,20 @@
     obsidian                  #Note taking app
     vscodium                  #Coding app
     discord                   #Chat application
-    obs-studio                #Screen recording/streaming software
+    (wrapOBS {
+      plugins = with obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    })
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     bottles
     libreoffice
+
+    #Temporary Fix Hopefully we can move this somewhere
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
   ];
 }

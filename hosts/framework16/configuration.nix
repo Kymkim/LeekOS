@@ -6,24 +6,28 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  # Fonts
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-  ];
 
 
   #System Configuration:
-  
+
     # Environment Variables
-    environment.variables.EDITOR = "vim";
+    environment.variables = {
+      EDITOR = "vim";
+      QT_QPA_PLATFORM = "wayland";
+    };
+
+    # Fonts
+    fonts.packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
+    ];
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
