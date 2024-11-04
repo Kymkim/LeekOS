@@ -43,6 +43,7 @@
              
 
     wayland.windowManager.hyprland.enable = true;
+    wayland.windowManager.hyprland.xwayland.enable = true;
     wayland.windowManager.hyprland.settings = {
 
       #Disable fractional scaling on Framework16 cause XWayland sucks

@@ -17,7 +17,7 @@
     rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
     nerdfonts     #Icons as fonts
     nwg-look      #For setting GTK themes
-    pavucontrol   #GUI for PulseAudio 
+    pwvucontrol   #GUI for PulseAudio 
     blueberry     #GUI for configuring Bluetooth Devices
     git
     vim
