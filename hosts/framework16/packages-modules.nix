@@ -3,6 +3,7 @@
   imports = [
     ../../modules/nixos/default.nix
   ];
+
   steam.enable = true;
   printer.enable = true;
   fcitx5.enable = true;
@@ -32,6 +33,6 @@
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     bottles
-  
+    libreoffice
   ];
 }
