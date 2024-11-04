@@ -36,6 +36,13 @@
     inkscape-with-extensions  #App for editing SVGs
     kdePackages.kdenlive
     bottles
+    (wrapOBS {
+      plugins = with obs-studio-plugins; [
+        wlrobs
+        obs-backgroundremoval
+        obs-pipewire-audio-capture
+      ];
+    })
   ];
 
   # Fonts
