@@ -86,7 +86,6 @@
       users = {
         "ukimnix" = import ./home.nix;
       };
-      backupFileExtension = "backup";
     };
 
     # No touchie
