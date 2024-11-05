@@ -30,7 +30,6 @@
     obsidian                  #Note taking app
     vscodium                  #Coding app
     discord                   #Chat application
-    obs-studio                #Screen recording/streaming software
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     inkscape-with-extensions  #App for editing SVGs
@@ -43,6 +42,8 @@
         obs-pipewire-audio-capture
       ];
     })
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
   ];
 
   # Fonts
@@ -61,7 +62,10 @@
   #System Configuration:
   
     # Environment Variables
-    environment.variables.EDITOR = "vim";
+    environment.variables = {
+      EDITOR = "vim";
+      QT_QPA_PLATFORM = "wayland";
+    };
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -76,6 +80,7 @@
     services.pipewire = {
       enable = true;
       pulse.enable = true;
+      wireplumber.enable = true;
     };
     
     # Bluetooth
