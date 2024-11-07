@@ -39,8 +39,9 @@
   # ▐▌   ▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▐▌ ▐▌▝▚▄▞▘▐▙▄▄▖▗▄▄▞▘
 
   # Additional packages if needed
-  environment.systemPackages = [
-
+  environment.systemPackages = with pkgs; [
+    gh
+    git
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 

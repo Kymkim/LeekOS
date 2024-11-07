@@ -18,13 +18,10 @@
     #Please comment out the ones you dont need...
     rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
     nwg-look      #For setting GTK themes
-    pwvucontrol   #GUI for PulseAudio 
-    git
     vim
     wget
     curl
     firefox  
-    gh                        #GitHub CLI Tool
     obsidian                  #Note taking app
     vscodium                  #Coding app
     discord                   #Chat application
