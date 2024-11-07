@@ -13,12 +13,15 @@
         plugins = with pkgs.xfce; [
           thunar-archive-plugin
           thunar-volman
+          thunar-media-tags-plugin
         ];
       };
     };
     environment.systemPackages = with pkgs; [
       file-roller
       gnome-disk-utility
+      image-roll
+      mplayer
     ];
     services = {
       udisks2.enable = true;
