@@ -25,13 +25,6 @@
     obsidian                  #Note taking app
     vscodium                  #Coding app
     discord                   #Chat application
-    (wrapOBS {
-      plugins = with obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
-    })
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     bottles
@@ -43,7 +36,7 @@
     iwgtk
   ];
 
-  nixpkgs.config.allowUnfree = true; 
+  nixpkgs.config.allowUnfree = true;
   hyprland.FW16config = true;
   terminal.FW16config = true;
   hyprland.Fcitx5.enable = true;

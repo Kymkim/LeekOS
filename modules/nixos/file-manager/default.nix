@@ -2,10 +2,10 @@
 {
 
   options = {
-    system-modules.thunar.enable = lib.mkEnableOption "Enables Thunar File Manager";
+    system-modules.file-manager.enable = lib.mkEnableOption "Adds file GUI file management utilities";
   };
 
-  config = lib.mkIf config.system-modules.thunar.enable {  
+  config = lib.mkIf config.system-modules.file-manager.enable {  
     programs = {
       xfconf.enable = true;
       thunar = {
@@ -18,9 +18,12 @@
     };
     environment.systemPackages = with pkgs; [
       file-roller
+      gnome-disk-utility
     ];
     services = {
       udisks2.enable = true;
+      devmon.enable = true;
+      gvfs.enable = true;
     };
   };
 

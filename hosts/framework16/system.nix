@@ -15,22 +15,26 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  # WE USE HYPRLAND ON DIS LAND!
+  programs.hyprland.enable = true;
+
   # ▗▖  ▗▖ ▗▄▖ ▗▄▄▄ ▗▖ ▗▖▗▖   ▗▄▄▄▖ ▗▄▄▖
   # ▐▛▚▞▜▌▐▌ ▐▌▐▌  █▐▌ ▐▌▐▌   ▐▌   ▐▌   
   # ▐▌  ▐▌▐▌ ▐▌▐▌  █▐▌ ▐▌▐▌   ▐▛▀▀▘ ▝▀▚▖
   # ▐▌  ▐▌▝▚▄▞▘▐▙▄▄▀▝▚▄▞▘▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘
 
-  # System modules activation. Deactivate if not needed.
+  # System modules activation. Deactivate if not needed. All system-modules are disabled by default. 
+  # Check modules/nixos/default.nix for the list of all possible modules
   system-modules = {
-    audio.enable      = true;   # Enables audio support through PipeWire
-    fcitx5.enable     = true;   # Used for mozc (Japanese Keyboard Layout)
-    fonts.enable      = true;   # Installs various fonts such as fira-code, noto, liberation, etc...
-    gaming.enable     = false;  # Disables various gaming packages and softwares
-    printer.enable    = true;   # Printer support. The most tempermental device in existance - sometimes work, sometimes it does not
-    thunar.enable     = true;   # File manager to manage... well files.
-    utils.enable      = true;   # Useful CLI utilities
-    vm.enable         = true;   # Enables virtual machine support with Virtio support  
-    wireless.enable   = true;   # Wireless connectivity support such as wifi and bluetooth
+    audio.enable            = true;   
+    content-creation.enable = true;   
+    fcitx5.enable           = true;   
+    file-manager.enable     = true;   
+    fonts.enable            = true;  
+    printer.enable          = true;  
+    utils.enable            = true;   
+    vm.enable               = true;   
+    wireless.enable         = true;  
   };
 
   # ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖
@@ -99,5 +103,15 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Automatic garbage collection. And some optimization
+  nix = {
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
 
 }

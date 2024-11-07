@@ -2,10 +2,10 @@
 {
 
   options = {
-    template.enable = lib.mkEnableOption "Enables Template";
+    system-modules.template.enable = lib.mkEnableOption "Enables Template";
   };
 
-  config = lib.mkIf config.template.enable {  
+  config = lib.mkIf config.system-modules.template.enable {  
     
   };
 
