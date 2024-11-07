@@ -2,10 +2,10 @@
 {
 
   options = {
-    printer.enable = lib.mkEnableOption "Enables Printing Services";
+    system-modules.printer.enable = lib.mkEnableOption "Enables Printing Services";
   };
 
-  config = lib.mkIf config.printer.enable {  
+  config = lib.mkIf config.system-modules.printer.enable {  
     services.printing.enable = true;
     services.avahi = {
       enable = true;

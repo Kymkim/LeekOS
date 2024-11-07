@@ -22,7 +22,7 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 				inherit system;
 				specialArgs = {inherit inputs;};
 				modules = [
-					./hosts/default/configuration.nix
+					./hosts/default/system.nix
 					inputs.home-manager.nixosModules.default
 				];
 			};
@@ -30,7 +30,7 @@ outputs = { self, nixpkgs, home-manager,  ... }@inputs:
 				inherit system;
 				specialArgs = {inherit inputs;};
 				modules = [
-					./hosts/framework16/configuration.nix	
+					./hosts/framework16/system.nix	
 					inputs.home-manager.nixosModules.default
 				];
 			};

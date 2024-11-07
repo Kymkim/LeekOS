@@ -3,11 +3,14 @@
 
 {
     imports = [
-        ./steam/steam.nix
-        ./printing/printer.nix
-        ./fcitx5/fcitx5.nix
-        ./virt/virt.nix
-        ./thunar/thunar.nix
+        ./audio
+        ./fcitx5
+        ./fonts
+        ./gaming
+        ./printer
+        ./thunar
+        ./utils
+        ./vm
+        ./wireless
     ];
-    
 }

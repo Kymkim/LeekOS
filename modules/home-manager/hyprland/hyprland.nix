@@ -282,7 +282,7 @@
         "col.shadow_inactive" = "rgba(FFFFFF00)";
         drop_shadow = true;
         shadow_range = lib.mkMerge [
-          (lib.mkIf config.hyprland.FW16config 20)
+          (lib.mkIf config.hyprland.FW16config 15)
           (lib.mkIf (!config.hyprland.FW16config) 10)
         ];
         shadow_render_power = lib.mkMerge [

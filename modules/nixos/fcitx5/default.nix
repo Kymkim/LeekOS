@@ -2,10 +2,10 @@
 {
 
   options = {
-    fcitx5.enable = lib.mkEnableOption "Enables Japanese mozc with Fcitx5";
+    system-modules.fcitx5.enable = lib.mkEnableOption "Enables Japanese mozc with Fcitx5";
   };
 
-  config = lib.mkIf config.fcitx5.enable {  
+  config = lib.mkIf config.system-modules.fcitx5.enable {  
     i18n.inputMethod = {
       type = "fcitx5";
       enable = true;

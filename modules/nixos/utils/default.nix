@@ -2,10 +2,10 @@
 {
 
   options = {
-    utils.enable = lib.mkEnableOption "Enables Useful Utility Tools";
+    system-modules.utils.enable = lib.mkEnableOption "Enables Useful Utility Tools";
   };
 
-  config = lib.mkIf config.utils.enable {  
+  config = lib.mkIf config.system-modules.utils.enable {  
     
     programs = {
       #CLI Utilities

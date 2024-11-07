@@ -1,30 +1,28 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, ... }:
+
+# Mainly used for declaratively setting themes and desktop environment stuff. Nothing else
+
 {
+
+  home.username = "ukimnix";
+  home.homeDirectory = "/home/ukimnix";
+  home.stateVersion = "24.05";
+
   imports = [
-    ../../modules/nixos/default.nix
+    ../../modules/home-manager
   ];
 
-  steam.enable = true;
-  printer.enable = true;
-  fcitx5.enable = true;
-  vms.enable = true;
-  thunar.enable = true;
-  
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     #Most of these will be moved once they got their own configuration settings
     #In the meantime, these are appllications I like to run on my system
     #Please comment out the ones you dont need...
     rofi-wayland  #Temporarily here. Will use EWW or AGS for app launcher down the line
-    nerdfonts     #Icons as fonts
     nwg-look      #For setting GTK themes
-    pwvucontrol   #GUI for PulseAudio 
-    blueberry     #GUI for configuring Bluetooth Devices
     git
     vim
     wget
     curl
-    firefox
-    killall     
+    firefox  
     gh                        #GitHub CLI Tool
     obsidian                  #Note taking app
     vscodium                  #Coding app
@@ -44,5 +42,17 @@
     #Temporary Fix Hopefully we can move this somewhere
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
+    iwgtk
   ];
+
+  nixpkgs.config.allowUnfree = true; 
+  hyprland.FW16config = true;
+  terminal.FW16config = true;
+  hyprland.Fcitx5.enable = true;
+  programs.pywal.enable = true;
+  gtk-theme.enable = true;
+
+  programs = {
+    home-manager.enable = true;
+  };
 }

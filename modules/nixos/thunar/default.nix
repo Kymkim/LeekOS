@@ -2,10 +2,10 @@
 {
 
   options = {
-    thunar.enable = lib.mkEnableOption "Enables Thunar File Manager";
+    system-modules.thunar.enable = lib.mkEnableOption "Enables Thunar File Manager";
   };
 
-  config = lib.mkIf config.thunar.enable {  
+  config = lib.mkIf config.system-modules.thunar.enable {  
     programs = {
       xfconf.enable = true;
       thunar = {
@@ -19,6 +19,9 @@
     environment.systemPackages = with pkgs; [
       file-roller
     ];
+    services = {
+      udisks2.enable = true;
+    };
   };
 
 }

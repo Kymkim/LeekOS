@@ -2,10 +2,10 @@
 
 {
   options = {
-    vms.enable = lib.mkEnableOption "Enables Template";
+    system-modules.vm.enable = lib.mkEnableOption "Enables Virtual Machine with Virtio Support";
   };
 
-  config = lib.mkIf config.vms.enable {  
+  config = lib.mkIf config.system-modules.vm.enable {  
     programs.dconf.enable = true;
   
     users.users.ukimnix.extraGroups = [ "libvirtd" ];
