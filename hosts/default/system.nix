@@ -99,8 +99,12 @@
   system.stateVersion = "24.05";
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
 
   # Automatic garbage collection. And some optimization
   nix = {
