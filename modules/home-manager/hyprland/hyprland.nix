@@ -27,6 +27,7 @@
     home.packages = with pkgs; [
       hyprpaper
       hyprshot
+      hyprcursor
     ];
 
     services.hyprpaper = {
@@ -46,10 +47,8 @@
     wayland.windowManager.hyprland.xwayland.enable = true;
     wayland.windowManager.hyprland.settings = {
 
-      #Disable fractional scaling on Framework16 cause XWayland sucks
       monitor = lib.mkIf config.hyprland.FW16config "eDP-1, 2560x1600@165, 0x0, 1";
 
-      #Use dvorak when enabled
       input = {
         kb_layout = "us, us";
         kb_variant = " , colemak";
@@ -65,7 +64,7 @@
       };  
 
       cursor = {
-        enable_hyprcursor = false; #TODO: add hypercursor
+        enable_hyprcursor = true; #TODO: add hypercursor
       };
 
       exec-once = [
