@@ -26,15 +26,18 @@
   # System modules activation. Deactivate if not needed. All system-modules are disabled by default. 
   # Check modules/nixos/default.nix for the list of all possible modules
   system-modules = {
-    audio.enable            = true;   
-    content-creation.enable = true;   
-    fcitx5.enable           = true;   
-    file-manager.enable     = true;   
-    fonts.enable            = true;  
-    printer.enable          = true;  
-    utils.enable            = true;   
-    vm.enable               = true;   
-    wireless.enable         = true;  
+    audio.enable              = true;   
+    content-creation.enable   = true;
+    content-creation.v4l2DSLR = true;  
+    fcitx5.enable             = true;   
+    file-manager.enable       = true;   
+    fonts.enable              = true; 
+    gaming.enable             = true; 
+    printer.enable            = true;  
+    utils.enable              = true;   
+    vm.enable                 = true;  
+    vm.waydroid.enable        = true; 
+    wireless.enable           = true;  
   };
 
   # ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖
@@ -46,6 +49,7 @@
   environment.systemPackages = with pkgs; [
     gh
     git
+    bottles
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 

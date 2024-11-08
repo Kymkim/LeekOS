@@ -27,7 +27,6 @@
     discord                   #Chat application
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
-    bottles
     libreoffice
 
     #Temporary Fix Hopefully we can move this somewhere

@@ -6,10 +6,18 @@
   };
 
   config = lib.mkIf config.system-modules.gaming.enable {  
+
+    #Enables controller support for Steam Hardware
+    hardware.steam-hardware.enable = true;
+
     programs.steam = {
       enable = true;
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+
+      #Open ports in firewall
+      remotePlay.openFirewall = true; 
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+
     };
   };
 
