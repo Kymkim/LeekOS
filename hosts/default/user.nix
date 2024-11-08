@@ -44,9 +44,6 @@
   ];
 
   nixpkgs.config.allowUnfree = true; 
-  hyprland.FW16config = true;
-  terminal.FW16config = true;
-  hyprland.Fcitx5.enable = true;
   programs.pywal.enable = true;
   gtk-theme.enable = true;
 
