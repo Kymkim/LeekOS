@@ -15,7 +15,7 @@ This is still under development and there are alot of things I need to work on. 
 Suggestions? I'm still learning Nix and I'm always to learn something new. Feel free to reach out! 
 
 ## Credits To The Artists:
-Wallpaper: ![sakiika0513](https://www.pixiv.net/en/users/50549015)
+Wallpaper: [sakiika0513](https://www.pixiv.net/en/users/50549015)
 
 ## Artwork Removal Request
-If you see your artwork/media in this repository and want it removed. Please send me a message at ![oliver@kym-kim.com] and I will take it down
+If you see your artwork/media in this repository and want it removed. Please send me a message atoliver@kym-kim.com
