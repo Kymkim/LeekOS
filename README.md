@@ -18,4 +18,6 @@ Suggestions? I'm still learning Nix and I'm always to learn something new. Feel 
 Wallpaper: [sakiika0513](https://www.pixiv.net/en/users/50549015)
 
 ## Artwork Removal Request
-If you see your artwork/media in this repository and want it removed. Please send me a message atoliver@kym-kim.com
+If you see your artwork/media in this repository and want it removed. Please send me a message at oliver@kym-kim.com
+
+# Update Logs:
