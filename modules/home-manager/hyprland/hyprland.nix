@@ -265,29 +265,20 @@
       ######################################################
 
       general = {
-        border_size = lib.mkMerge [
-          (lib.mkIf config.hyprland.FW16config 6)
-          (lib.mkIf (!config.hyprland.FW16config) 3)
-        ];
+        border_size = 4;
         gaps_in = 5;
         gaps_out = 20;
         "col.active_border" = "rgba(2cf5f5ff) rgba(e12885ee) 45deg";
-        "col.inactive_border" = "rgba(86cecb55)";
+        "col.inactive_border" = "rgba(86cecb77)";
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 3;
         "col.shadow" = "rgba(e1288555)";
         "col.shadow_inactive" = "rgba(FFFFFF00)";
         drop_shadow = true;
-        shadow_range = lib.mkMerge [
-          (lib.mkIf config.hyprland.FW16config 15)
-          (lib.mkIf (!config.hyprland.FW16config) 10)
-        ];
-        shadow_render_power = lib.mkMerge [
-          (lib.mkIf config.hyprland.FW16config 6)
-          (lib.mkIf (!config.hyprland.FW16config) 3)
-        ];
+        shadow_range = 10;
+        shadow_render_power = 3;
       };
 
       # ░  ░░░░  ░░        ░░   ░░░  ░░░░░░░░       ░░░  ░░░░  ░░  ░░░░░░░░        ░░░      ░░
