@@ -168,7 +168,7 @@
         #"$mod, Y, exec, $mikuwiki"
         "$mod, U, exec, unityhub"
         #"$mod, I, exec, $mikuwiki"
-        #"$mod, O, exec, $mikuwiki"
+        "$mod, O, exec, obsidian"
         #"$mod, P, exec, $mikuwiki"
         #"$mod, H, exec, $mikuwiki"
         #"$mod, J, exec, $mikuwiki"
