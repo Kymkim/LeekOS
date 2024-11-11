@@ -20,6 +20,7 @@
               obs-pipewire-audio-capture
             ];
           })
+          kdenlive 
           audacity
         ];
       }
