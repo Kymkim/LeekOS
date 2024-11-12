@@ -28,7 +28,8 @@
     content-creation.v4l2DSLR = true;    
     file-manager.enable       = true;   
     fonts.enable              = true; 
-    gaming.enable             = true; 
+    gaming.enable             = true;
+    homelab.enable            = true; 
     printer.enable            = true;  
     utils.enable              = true;   
     vm.enable                 = true;  

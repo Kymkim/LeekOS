@@ -28,11 +28,11 @@
   system-modules = {
     audio.enable              = true;   
     content-creation.enable   = true;
-    content-creation.v4l2DSLR = true;  
     fcitx5.enable             = true;   
     file-manager.enable       = true;   
     fonts.enable              = true; 
-    gaming.enable             = true; 
+    gaming.enable             = true;
+    homelab.enable            = true;  
     printer.enable            = true;  
     utils.enable              = true;   
     vm.enable                 = true;  
