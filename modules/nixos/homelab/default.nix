@@ -7,8 +7,9 @@
 
   config = lib.mkIf config.system-modules.homelab.enable {  
     environment.systemPackages = with pkgs; [
-      #cura         #As of 11-12-2024: Cura is broken due to python3.12-libarcus
+      #curaengine         #As of 11-12-2024: Cura is broken due to python3.12-libarcus
       freecad
+      kicad-unstable
     ];
   };
 
