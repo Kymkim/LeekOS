@@ -9,7 +9,7 @@
     environment.systemPackages = with pkgs; [
       #curaengine         #As of 11-12-2024: Cura is broken due to python3.12-libarcus
       freecad
-      kicad-unstable
+      #kicad-unstable
     ];
   };
 

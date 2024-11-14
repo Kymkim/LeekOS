@@ -24,7 +24,8 @@
     firefox  
     obsidian                  #Note taking app
     vscodium                  #Coding app
-    discord                   #Chat application
+    webcord
+    discordo
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
     libreoffice
