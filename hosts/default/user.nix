@@ -46,6 +46,7 @@
   nixpkgs.config.allowUnfree = true; 
   programs.pywal.enable = true;
   gtk-theme.enable = true;
+  hyprland.Fcitx5.enable = true;
 
   programs = {
     home-manager.enable = true;
