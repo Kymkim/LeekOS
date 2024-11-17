@@ -57,7 +57,6 @@
   # ▐▌   ▐▛▚▖▐▌▐▌  ▐▌    ▐▌  ▐▌▐▌ ▐▌▐▌ ▐▌
   # ▐▛▀▀▘▐▌ ▝▜▌▐▌  ▐▌    ▐▌  ▐▌▐▛▀▜▌▐▛▀▚▖
   # ▐▙▄▄▖▐▌  ▐▌ ▝▚▞▘      ▝▚▞▘ ▐▌ ▐▌▐▌ ▐▌
-
   # Additional environment variables if needed
   environment.variables = {
     EDITOR = "vim";

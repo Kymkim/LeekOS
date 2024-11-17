@@ -14,11 +14,16 @@
       enable = true;
 
       #Open ports in firewall
-      remotePlay.openFirewall = true; 
+      remotePlay.openFirewall = true;  
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
 
-    };
+    }; 
+
+    environment.systemPackages = with pkgs; [
+      lutris
+      wineWowPackages.waylandFull
+    ];
   };
 
 }
