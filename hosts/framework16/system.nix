@@ -50,7 +50,10 @@
   environment.systemPackages = with pkgs; [
     gh
     git
+    git-lfs
     bottles
+    xdg-desktop-kde
+    xdg-desktop-portal
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 

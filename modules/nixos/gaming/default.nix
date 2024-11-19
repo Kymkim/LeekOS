@@ -3,6 +3,7 @@
 
   options = {
     system-modules.gaming.enable = lib.mkEnableOption "Enables Steam";
+    system-modules.gaming.emulation = lib.mkEnableOption "Enables various console emulation tools";
   };
 
   config = lib.mkIf config.system-modules.gaming.enable {  
@@ -20,10 +21,14 @@
 
     }; 
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = [ 
+      lib.mkIf config.system-modules.gaming.emulation {
+        retroarch
+      }
       lutris
       wineWowPackages.waylandFull
     ];
+
   };
 
 }

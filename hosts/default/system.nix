@@ -30,12 +30,15 @@
     file-manager.enable       = true;   
     fonts.enable              = true; 
     gaming.enable             = true;
+    gamiing.emulation         = true;
     homelab.enable            = true; 
     printer.enable            = true;  
     utils.enable              = true;   
     vm.enable                 = true;  
     wireless.enable           = true; 
   };
+
+  hardware.keyboard.qmk.enable = true;
 
   # ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖ ▗▄▖  ▗▄▄▖▗▄▄▄▖ ▗▄▄▖
   # ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌   ▐▌   ▐▌   
