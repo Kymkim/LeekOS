@@ -109,6 +109,7 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
+    useOSProber = true;
   };
 
   # Automatic garbage collection. And some optimization
