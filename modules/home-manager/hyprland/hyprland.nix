@@ -28,6 +28,7 @@
       hyprpaper
       hyprshot
       hyprcursor
+      hyprpolkitagent
     ];
 
     services.hyprpaper = {
@@ -70,6 +71,7 @@
       exec-once = [
         "hyprpaper"
         "ags"
+        "lxqt-policykit-agent"
         (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5 -d -r")
         (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5-remote-r")
       ];

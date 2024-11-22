@@ -21,10 +21,7 @@
 
     }; 
 
-    environment.systemPackages = [ 
-      lib.mkIf config.system-modules.gaming.emulation {
-        retroarch
-      }
+    environment.systemPackages = with pkgs; [ 
       lutris
       wineWowPackages.waylandFull
     ];

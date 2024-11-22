@@ -4,6 +4,45 @@
   options = {
     system-modules.vm.enable = lib.mkEnableOption "Enables Virtual Machine support";
     system-modules.vm.waydroid.enable = lib.mkEnableOption "Enables Waydroid Support";
+
+    system-modules.vm.PCIpassthrough = {
+
+      enable = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = "Whether to enable PCI passthrough support";
+      };
+
+      cpuIOMMU = lib.mkOption {
+        default = "";
+        example = "amd_iommu";
+        type = lib.types.str;
+        description = ''
+          Turns onn IOMMU for the given argument. 
+          Use amd_iommu for AMD CPUs and intel_iommu for Intel CPUs.
+        '';
+      };
+
+      pciIDs = lib.mkOption {
+        default = [];
+        example = ["10de:21c4" "10de:1aeb" "10de:1aec" "10de:1aed"];
+        type = lib.types.listOf lib.types.str;
+        description = ''
+          The array of strings of PCI IDs to passthrough.
+        '';
+      };
+
+      bypassIOMMU = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = ''
+          Use only when your IOMMU groups are not isolated. 
+          Use at your own risk at can introduce instability
+        '';
+      };
+
+    };  
+
   };
 
   config = lib.mkMerge [
@@ -36,6 +75,33 @@
           spiceUSBRedirection.enable = true;
         };
         services.spice-vdagentd.enable = true;
+      }
+    )
+    (
+      lib.mkIf config.system-modules.vm.PCIpassthrough.enable {
+        
+        assertions = [
+          {
+            assertion = ((config.system-modules.vm.PCIpassthrough.cpuIOMMU == "amd_iommu")||(config.system-modules.vm.PCIpassthrough.cpuIOMMU == "intel_iommu"));
+            message = "Invalid CPU type for IOMMU. Declare CPU type with config.system-modules.vm.cpuIOMMU with either amd_iommu or intel_iommu";
+          }
+        ];
+
+        boot = {
+          initrd.kernelModules = [
+            "vfio_pci"
+            "vfio"
+            "vfio_iommu_type1"
+          ];
+
+          kernelParams = [
+            (config.system-modules.vm.PCIpassthrough.cpuIOMMU + "=on")
+            "iommu=pt"
+            ("vfio-pci.ids=" + lib.concatStringsSep "," config.system-modules.vm.PCIpassthrough.pciIDs)
+            (lib.mkIf config.system-modules.vm.PCIpassthrough.bypassIOMMU "pcie_acs_override=downstream,multifunction")
+          ];
+        };
+
       }
     )
     (
