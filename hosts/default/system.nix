@@ -35,10 +35,12 @@
     utils.enable              = true;   
     vm = {
       enable = true;
+      qemu.useAntiDetectionPatch = true;
       PCIpassthrough = {
         enable = true;
-        pciIDs = ["10de:21c4" "10de:1aeb" "10de:1aec" "10de:1aed"];
+        pciIDs = ["10de:21c4" "10de:1aeb" "10de:1aec" "10de:1aed" "144d:a808"];
         cpuIOMMU = "amd_iommu";
+        bypassIOMMU = true;
       };
     };
     wireless.enable           = true; 

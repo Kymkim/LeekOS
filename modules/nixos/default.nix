@@ -28,8 +28,6 @@
         homelab.enable              = lib.mkDefault false;   # Adds "homelab" related tools such as FreeCAD and Cura
         printer.enable              = lib.mkDefault false;   # Printer support. The most tempermental device in existance - sometimes work, sometimes it does not
         utils.enable                = lib.mkDefault false;   # Useful CLI utilities
-        vm.enable                   = lib.mkDefault false;   # Enables virtual machine support with Virtio support  
-        vm.waydroid.enable          = lib.mkDefault false;   # Enables android virtualisation
         wireless.enable             = lib.mkDefault false;   # Wireless connectivity support such as wifi and bluetooth
     };
     
