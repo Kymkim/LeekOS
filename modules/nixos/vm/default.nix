@@ -52,7 +52,8 @@
           default = false;
           type = lib.types.bool;
           description = ''
-            Use only when your IOMMU groups are not isolated. 
+            Use only when your IOMMU groups are not isolated.
+            Patches the linux kernel to seperate IOMMU devices
             Use at your own risk at can introduce instability
           '';
         };
