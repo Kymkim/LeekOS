@@ -10,6 +10,7 @@
         ./fonts
         ./gaming
         ./homelab
+        ./navidrome
         ./printer
         ./utils
         ./vm

@@ -1,12 +1,35 @@
-{ pkgs, lib, config, ... }:
+{config, pkgs, lib, ... }:
+
 {
-
   options = {
-    system-modules.template.enable = lib.mkEnableOption "Enables Template";
+    system-modules.title = {
+
+      featureA = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = "Whether to enable featureA";
+      };
+
+      featureB = lib.mkOption {
+        default = false;
+        type = lib.types.bool;
+        description = "Whether to enable featureB";
+      };
+
+    };
+
   };
 
-  config = lib.mkIf config.system-modules.template.enable {  
-    
-  };
+  config = lib.mkMerge [
+    (
+      lib.mkIf config.system-modules.title.featureA {  
 
+      }
+    )
+    (
+      lib.mkIf config.system-modules.title.featureB {
+
+      }
+    )
+  ];
 }

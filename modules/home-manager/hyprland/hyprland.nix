@@ -25,25 +25,11 @@
     
 
     home.packages = with pkgs; [
-      hyprpaper
       hyprshot
       hyprcursor
       hyprpolkitagent
     ];
-
-    services.hyprpaper = {
-      enable = true;
-      settings = {
-        preload = "/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg";
-        wallpaper = lib.mkMerge [
-          (lib.mkIf config.hyprland.FW16config "eDP-1, /etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg")
-          (lib.mkIf (!config.hyprland.FW16config) "HDMI-A-1, /etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg")
-        ];
-      };
-    };
-
-             
-
+   
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland.enable = true;
     wayland.windowManager.hyprland.settings = {
@@ -69,7 +55,6 @@
       };
 
       exec-once = [
-        "hyprpaper"
         "ags"
         "lxqt-policykit-agent"
         "ags run"
