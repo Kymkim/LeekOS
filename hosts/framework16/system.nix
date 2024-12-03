@@ -52,8 +52,8 @@
     git
     git-lfs
     bottles
-    xdg-desktop-kde
-    xdg-desktop-portal
+    #xdg-desktop-kde
+    #xdg-desktop-portal
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 

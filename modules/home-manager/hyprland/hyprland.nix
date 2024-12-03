@@ -72,6 +72,7 @@
         "hyprpaper"
         "ags"
         "lxqt-policykit-agent"
+        "ags run"
         (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5 -d -r")
         (lib.mkIf config.hyprland.Fcitx5.enable "fcitx5-remote-r")
       ];

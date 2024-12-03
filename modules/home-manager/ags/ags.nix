@@ -1,36 +1,30 @@
 { pkgs, lib, config, inputs, ... }:
 
-  # ░░      ░░░░      ░░░░      ░░
-  # ▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒
-  # ▓  ▓▓▓▓  ▓▓  ▓▓▓   ▓▓▓      ▓▓
-  # █        ██  ████  ████████  █
-  # █  ████  ███      ████      ██
-                                                                         
-  ###################################################################################
-  # Aylur's GTK Shell for creating fucntional wayland widgets :)                    #
-  #                                                                                 #
-  #                                                                                 #
-  # Website: https://aylur.github.io/ags-docs/                                      #
-  ###################################################################################
-
 {
 
   imports = [inputs.ags.homeManagerModules.default];
 
-  options = {
-    ags.enable = lib.mkEnableOption "Enables Aylur's GTK Shell";
+  options.ags = {
+    enable = lib.mkOption {
+      default = false;
+      type = lib.types.bool;
+      description = "Whether to use AGS";
+    };
   };
 
   config = lib.mkIf config.ags.enable {  
     programs.ags = {
       enable = true;
-      #configDir = ./config;
       extraPackages = with pkgs; [
         gtksourceview
         webkitgtk
         accountsservice
         nwg-look
       ];
+    };
+    home.file.".config/ags" = {
+      source = ./config;
+      recursive = true;
     };
   };
 
