@@ -36,6 +36,8 @@
     unityhub                  #App for managing Unity Project and installation
     bottles
     libreoffice
+    picard
+    unzip
 
     #Temporary Fix Hopefully we can move this somewhere
     xdg-desktop-portal
@@ -47,6 +49,7 @@
   programs.pywal.enable = true;
   gtk-theme.enable = true;
   hyprland.Fcitx5.enable = true;
+  ags.enable = true;
 
   programs = {
     home-manager.enable = true;

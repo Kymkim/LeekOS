@@ -9,6 +9,7 @@
         ./file-manager
         ./fonts
         ./gaming
+        ./grub-theme
         ./homelab
         ./navidrome
         ./printer

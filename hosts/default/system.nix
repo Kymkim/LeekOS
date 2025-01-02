@@ -31,7 +31,6 @@
     fonts.enable              = true; 
     gaming.enable             = true;
     homelab.enable            = true; 
-    navidrome.enable          = true;
     printer.enable            = true;  
     utils.enable              = true;   
     vm = {
@@ -58,6 +57,23 @@
     gh
     git
     lxqt.lxqt-policykit
+    kicad
+    uv
+    python39
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix
+        ms-python.python
+        ms-azuretools.vscode-docker
+        ms-vscode-remote.remote-ssh
+        github.copilot
+        
+      ];
+    })
+    asunder
+    makemkv
+    vlc
+    heroic
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 
@@ -119,7 +135,10 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
+    gfxmodeBios = "1280x1024";
+    gfxmodeEfi = "1280x1024";
   };
+
 
   # Automatic garbage collection. And some optimization
   nix = {
@@ -130,5 +149,6 @@
       options = "--delete-older-than 30d";
     };
   };
+
 
 }

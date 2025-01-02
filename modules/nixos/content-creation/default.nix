@@ -22,6 +22,8 @@
           })
           kdenlive 
           audacity
+          inkscape
+          krita
         ];
       }
     )
