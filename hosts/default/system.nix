@@ -139,6 +139,12 @@
     gfxmodeEfi = "1280x1024";
   };
 
+  #Hyprland so SDDM can see it
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
 
   # Automatic garbage collection. And some optimization
   nix = {

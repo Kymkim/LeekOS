@@ -12,6 +12,7 @@
         ./grub-theme
         ./homelab
         ./printer
+        ./sddm
         ./utils
         ./vm
         ./wireless
