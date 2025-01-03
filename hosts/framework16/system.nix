@@ -104,6 +104,12 @@
     };
   };
 
+  #Hyprland so SDDM can see it
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # No touchie
   system.stateVersion = "24.05";
 
