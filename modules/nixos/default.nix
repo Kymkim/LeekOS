@@ -11,7 +11,6 @@
         ./gaming
         ./grub-theme
         ./homelab
-        ./navidrome
         ./printer
         ./utils
         ./vm
