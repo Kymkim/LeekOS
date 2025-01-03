@@ -15,9 +15,6 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  # WE USE HYPRLAND ON DIS LAND!
-  programs.hyprland.enable = true;
-
   # ▗▖  ▗▖ ▗▄▖ ▗▄▄▄ ▗▖ ▗▖▗▖   ▗▄▄▄▖ ▗▄▄▖
   # ▐▛▚▞▜▌▐▌ ▐▌▐▌  █▐▌ ▐▌▐▌   ▐▌   ▐▌   
   # ▐▌  ▐▌▐▌ ▐▌▐▌  █▐▌ ▐▌▐▌   ▐▛▀▀▘ ▝▀▚▖
