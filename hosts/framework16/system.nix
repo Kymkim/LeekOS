@@ -128,4 +128,8 @@
     };
   };
 
+  #Fingerprint and power management
+  services.fprintd.enable = true;
+  services.power-profiles-daemon.enable = true;
+
 }

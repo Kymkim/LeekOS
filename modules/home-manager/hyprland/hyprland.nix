@@ -29,6 +29,22 @@
       hyprcursor
       hyprpolkitagent
     ];
+
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        ipc = "on";
+        splash = false;
+        splash_offset = 2.0;
+
+        preload =
+          [ "/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg" ];
+
+        wallpaper = [
+          "eDP-1,/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg"
+        ];
+      };
+    };
    
     wayland.windowManager.hyprland.enable = true;
     wayland.windowManager.hyprland.xwayland.enable = true;
