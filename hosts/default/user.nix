@@ -24,13 +24,13 @@
     firefox  
     obsidian                  #Note taking app
     vscodium                  #Coding app
-    discord                   #Chat application
+    webcord                 #Chat application
     (wrapOBS {
       plugins = with obs-studio-plugins; [
         wlrobs
         obs-backgroundremoval
         obs-pipewire-audio-capture
-      ];
+      ];s
     })
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation

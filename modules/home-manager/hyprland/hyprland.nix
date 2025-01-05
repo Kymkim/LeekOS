@@ -42,6 +42,7 @@
 
         wallpaper = [
           "eDP-1,/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg"
+          "HDMI-A-2,/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg"
         ];
       };
     };
