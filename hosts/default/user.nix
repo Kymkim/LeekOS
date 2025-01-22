@@ -30,7 +30,7 @@
         wlrobs
         obs-backgroundremoval
         obs-pipewire-audio-capture
-      ];s
+      ];
     })
     zoom-us                   #Online conference calls
     unityhub                  #App for managing Unity Project and installation
@@ -42,6 +42,9 @@
     #Temporary Fix Hopefully we can move this somewhere
     xdg-desktop-portal
     xdg-desktop-portal-hyprland
+
+    pipewire
+    wireplumber
     iwgtk
   ];
 

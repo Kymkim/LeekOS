@@ -9,6 +9,8 @@
 
 {
 
+  services.tailscale.enable = true; 
+
   imports = [ 
     ./hardware-configuration.nix  #DO NOT USE MINE! USE YOUR OWN HARDWARE CONFIGURATION
     ../../modules/nixos
