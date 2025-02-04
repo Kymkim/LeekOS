@@ -54,6 +54,7 @@
     #xdg-desktop-kde
     #xdg-desktop-portal
     kicad
+    picard
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 
