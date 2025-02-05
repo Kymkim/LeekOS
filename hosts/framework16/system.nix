@@ -55,6 +55,7 @@
     #xdg-desktop-portal
     kicad
     picard
+    ventoy
   ];
  
   # ▗▄▄▄▖▗▖  ▗▖▗▖  ▗▖    ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ 
