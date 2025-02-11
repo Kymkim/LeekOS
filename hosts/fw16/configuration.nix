@@ -8,10 +8,14 @@
   ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.useOSProber = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    device = "nodev";
+  };
 
-  networking.hostName = "Framework 16 - LeekOS"; # Define your hostname.
+  networking.hostName = "Framework16-LeekOS"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -61,6 +65,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    firefox
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
