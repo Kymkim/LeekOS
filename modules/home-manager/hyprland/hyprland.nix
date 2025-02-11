@@ -38,11 +38,11 @@
         splash_offset = 2.0;
 
         preload =
-          [ "/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg" ];
+          [ "/home/ukimnix/Wallpapers/miku.jpg" ];
 
         wallpaper = [
-          "eDP-1,/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg"
-          "HDMI-A-2,/etc/nixos/modules/home-manager/hyprland/wallpapers/miku.jpg"
+          "eDP-1,/home/ukimnix/Wallpapers/miku.jpg"
+          "HDMI-A-2,/home/ukimnix/Wallpapers/miku.jpg"
         ];
       };
     };
