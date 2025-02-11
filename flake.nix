@@ -24,16 +24,16 @@
         forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       overlays = import ./overlays { inherit inputs; };
       nixosConfigurations = {
-        your-host = nixpkgs.lib.nixosSystem {
+        fw16 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/your-host ];
+          modules = [ ./hosts/fw16];
         };
       };
       homeConfigurations = {
-        "your-name@your-host" = home-manager.lib.homeManagerConfiguration {
+        "ukimnix@fw16" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/your-name/your-host.nix ];
+          modules = [ ./home/fw16/fw16.nix ];
         };
       };
     };
