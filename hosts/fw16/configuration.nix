@@ -13,6 +13,7 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
+    useOSProber = true;
   };
 
   networking.hostName = "Framework16-LeekOS"; # Define your hostname.
@@ -64,9 +65,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    gh
     vim
     firefox
+    kitty
+    wofi
+    obsidian
+    vscode
   ];
+
+  services.tailscale.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
