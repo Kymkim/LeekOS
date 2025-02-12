@@ -72,6 +72,7 @@
     wofi
     obsidian
     vscode
+    thunar
   ];
 
   services.tailscale.enable = true;
