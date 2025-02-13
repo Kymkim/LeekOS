@@ -72,7 +72,9 @@
     wofi
     obsidian
     vscode
-    thunar
+    webcord
+    libreoffice
+    xfce.thunar
   ];
 
   services.tailscale.enable = true;
