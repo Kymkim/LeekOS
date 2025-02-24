@@ -74,15 +74,13 @@
     vscode
     webcord
     libreoffice
-    xfce.thunar
-    pavucontrol
     plexamp
     zoom-us
+    nwg-look
+    pwvucontrol
   ];
 
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
-
+ 
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
