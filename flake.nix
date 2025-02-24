@@ -33,7 +33,7 @@
         "ukimnix@fw16" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/fw16/fw16.nix ];
+          modules = [ ./home/ukimnix/ukimnix.nix ];
         };
       };
     };
