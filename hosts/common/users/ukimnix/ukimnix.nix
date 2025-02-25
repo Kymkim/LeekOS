@@ -1,1 +1,0 @@
-./home/ukimnix/ukimnix.nix
