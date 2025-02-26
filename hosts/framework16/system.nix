@@ -87,6 +87,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ukimnix = {
     isNormalUser = true;
+    initialPassword = "HatsuneMiku";
     description = "Kim";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
