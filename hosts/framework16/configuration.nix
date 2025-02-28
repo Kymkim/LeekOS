@@ -46,7 +46,10 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = (_: true);
+  };
 
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];

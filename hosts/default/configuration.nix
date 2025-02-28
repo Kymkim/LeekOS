@@ -22,13 +22,13 @@
         ms-azuretools.vscode-docker
         ms-vscode-remote.remote-ssh
         github.copilot
-        
       ];
     })
     asunder
     makemkv
     vlc
     heroic
+    
   ];
 
   # Minimal system configuration. Setting locale, keyboard, enabling flakes, home-manager etc.

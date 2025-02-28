@@ -10,11 +10,15 @@
     ../hyprland
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   home.packages = with pkgs; [
     firefox
     kitty
     rofi
-    vscodium
+    vscode
     obsidian
   ];
 
