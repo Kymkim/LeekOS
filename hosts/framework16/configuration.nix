@@ -2,8 +2,6 @@
 
 {
 
-  services.tailscale.enable = true; 
-
   imports = [ 
     ./hardware-configuration.nix  #DO NOT USE MINE! USE YOUR OWN HARDWARE CONFIGURATION
     ../../modules/nixos
@@ -15,6 +13,15 @@
     gh
     git
   ];
+  services.tailscale.enable = true; 
+  services.gvfs.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
 
   # Minimal system configuration. Setting locale, keyboard, enabling flakes, home-manager etc.
   # Locale and Keyboard
@@ -54,7 +61,7 @@
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-    # Home Manager Configuration
+  # Home Manager Configuration
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -62,7 +69,7 @@
     };
   };
 
-  #Hyprland so SDDM can see it
+  #Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -86,6 +93,25 @@
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 30d";
+    };
+  };
+
+  #Thunar
+  programs.xfconf.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
+
+  services = {
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
     };
   };
 

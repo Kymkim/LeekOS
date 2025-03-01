@@ -3,24 +3,16 @@
 
   home.username = "ukimnix";
   home.homeDirectory = "/home/ukimnix";
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   imports = [
     ../../modules/home-manager
+    ../common-packages
     ../hyprland
+    ../wallpaper/live.nix
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
+  programs.home-manager = {
+    enable = true;
   };
-
-  home.packages = with pkgs; [
-    firefox
-    kitty
-    rofi
-    vscode
-    obsidian
-  ];
-
-  programs.home-manager.enable = true;
 }
