@@ -43,6 +43,8 @@
         "$mod, T, exec, $terminal"
         "$mod, F, exec, firefox"
         "$mod, O, exec, obsidian"
+        
+        "$mod, X, togglefloating"
 
         #Workspaces 
         "$mod, 1, workspace, 1"

@@ -86,6 +86,8 @@
     device = "nodev";
   };
 
+  networking.hostName = "LeekOS-Framework16";
+
   # Automatic garbage collection. And some optimization
   nix = {
     optimise.automatic = true;

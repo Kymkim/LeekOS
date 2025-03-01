@@ -11,6 +11,8 @@
         plexamp
         libreoffice
         btop
+        obs-studio
+        neofetch
     ];
 
     nixpkgs.config = {

@@ -5,6 +5,8 @@
         linux-wallpaperengine
     ];
 
+    #This Requires Wallpaper Engine to be installed on Steam. Otherwise it would not work.
+
     # Wallpapers
     # 3286568347
     # 3000925581
