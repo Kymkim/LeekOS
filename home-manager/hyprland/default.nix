@@ -11,7 +11,6 @@
     enable = true;
 
     plugins = with pkgs.hyprlandPlugins; [
-      borders-plus-plus
       hy3
     ];
 
@@ -24,9 +23,9 @@
 
       bind = [
 
-        "$mod, PRINT, exec, hyprshot -m output"
-        ", PRINT, exec, hyprshot -m output"
-        "$shiftmod, PRINT, exec, hyprshot -m region"
+        "$mod, Print, exec, hyprshot -m output"
+        ", Print, exec, hyprshot -m output"
+        "$shiftmod, Print, exec, hyprshot -m region"
 
         "$mod, SPACE, exec, $launcher -show drun" 
         "$mod, T, exec, $terminal"
@@ -80,8 +79,9 @@
       ];
 
       general = {
-        gaps_in = 5;
-        gaps_out = 5;
+        gaps_in = 10;
+        gaps_out = 10;
+        border_size = 0;
         resize_on_border = true;
         extend_border_grab_area = 20;
         hover_icon_on_border = true;
@@ -92,6 +92,8 @@
       };
 
       decoration = {
+        rounding = 10;
+        rounding_power = 4.0;
         blur = {
           enabled = true;
         };
@@ -127,19 +129,6 @@
       windowrulev2 = [
         "float, class:kitty, title:kitty"
       ];
-
-      plugin = {
-        borders-plus-plus = {
-          add_borders = 1;
-          col.border_1 = "rgb(FFFFFF)";
-          col.border_2 = "rgb(2222FF)";
-          border_size_1 = 10;
-          border_size_2 = 5;
-        };
-#        hyprtrails = {
-#          color = "rgba(e1288588)";
-#        };
-      };
     };
   };
 }
