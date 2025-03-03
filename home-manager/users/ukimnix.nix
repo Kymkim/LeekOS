@@ -8,6 +8,7 @@
   imports = [
     ../../modules/home-manager
     ../common-packages
+    ../fnott
     ../hyprland
     ../wallpaper/live.nix
   ];

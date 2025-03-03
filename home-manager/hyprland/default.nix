@@ -2,6 +2,12 @@
 {
 
   # Hyprland Configuration (Default)
+  # Color Scheme:
+  #  - Background: #1D2B53tptt
+  #  - Foreground: #FFFFFF
+  #  - Primary Accent: #2AADFF
+  #  - Secondary Accent: #FF77A8
+  #  - Tertiary Accent: #c7ede4
 
   home.packages = with pkgs; [
     hyprshot
@@ -10,33 +16,37 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    plugins = with pkgs.hyprlandPlugins; [
-      hy3
-    ];
-
     settings = {
                                  
       "$mod" = "SUPER";
-      "$shiftmod" = "SUPER_SHIFT";
       "$terminal" = "kitty";
       "$launcher" = "rofi";
 
-      bind = [
+      bindm = [
+        "$mod, mouse:272, movewindow"
+      ];
 
-        "$mod, Print, exec, hyprshot -m output"
-        ", Print, exec, hyprshot -m output"
-        "$shiftmod, Print, exec, hyprshot -m region"
-
+      bind = 
+      [
+        #Window Shortcuts
         "$mod, SPACE, exec, $launcher -show drun" 
-        "$mod, T, exec, $terminal"
+        "$mod, ESCAPE, killactive"
+        "$mod SHIFT, ESCAPE, forcekillactive"
+        "$mod, Z, togglefloating"
+        "$mod, X, fullscreen"
+        "$mod, C, pin"
+        "ALT, TAB, cyclenext"
+
+        
+
+        #App Shortcuts
+        "$mod, RETURN, exec, $terminal"
         "$mod, F, exec, firefox"
         "$mod, O, exec, obsidian"
         "$mod, V, exec, code"
 
-        "$mod, ESCAPE, killactive"
-        "$mod, X, togglefloating"
-        "$mod, J, hy3:makegroup, h, toggle, ephermal"
-        "$mod, TAB, hy3:changegroup, toggletab"
+        
+        "$mod, TAB, togglespecialworkspace, board"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -47,16 +57,16 @@
         "$mod, 8, workspace, 8"
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
-        "$mod SHIFT, 1, hy3:movetoworkspace, 1"
-        "$mod SHIFT, 2, hy3:movetoworkspace, 2"
-        "$mod SHIFT, 3, hy3:movetoworkspace, 3"
-        "$mod SHIFT, 4, hy3:movetoworkspace, 4"
-        "$mod SHIFT, 5, hy3:movetoworkspace, 5"
-        "$mod SHIFT, 6, hy3:movetoworkspace, 6"
-        "$mod SHIFT, 7, hy3:movetoworkspace, 7"
-        "$mod SHIFT, 8, hy3:movetoworkspace, 8"
-        "$mod SHIFT, 9, hy3:movetoworkspace, 9"
-        "$mod SHIFT, 0, hy3:movetoworkspace, 10"
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
+        "$mod SHIFT, 0, movetoworkspace, 10"
       ];
 
       bindel = [
@@ -75,15 +85,14 @@
       ];
 
       env = [
-        "XCURSOR_SIZE, 48"
+        "XCURSOR_SIZE, 32"
       ];
 
       general = {
-        gaps_in = 10;
+        gaps_in = 5;
         gaps_out = 10;
         border_size = 0;
         resize_on_border = true;
-        extend_border_grab_area = 20;
         hover_icon_on_border = true;
         layout = "hy3";
         snap = {
@@ -111,7 +120,6 @@
 
       gestures = {
         workspace_swipe = true;
-        workspace_swipe_forever = true;
       };
 
       misc = {
@@ -128,6 +136,10 @@
 
       windowrulev2 = [
         "float, class:kitty, title:kitty"
+      ];
+
+      "workspace" = [
+        "special:board, gapsin:0, gapsout:0"
       ];
     };
   };

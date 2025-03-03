@@ -8,6 +8,13 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  #Framework16 Specific Stuff
+  boot.kernelParams = [ "amdgpu.abmlevel=0" ];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0012", ATTR{power/wakeup}="disabled", ATTR{driver/1-1.1.1.4/power/wakeup}="disabled"
+    SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0014", ATTR{power/wakeup}="disabled", ATTR{driver/1-1.1.1.4/power/wakeup}="disabled"
+  '';
+
   # Additional packages if needed
   environment.systemPackages = with pkgs; [
     gh
@@ -84,6 +91,7 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
+    useOSProber = true;
   };
 
   networking.hostName = "LeekOS-Framework16";

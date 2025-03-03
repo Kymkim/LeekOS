@@ -13,6 +13,7 @@
         btop
         obs-studio
         neofetch
+        pwvucontrol
     ];
 
     nixpkgs.config = {
