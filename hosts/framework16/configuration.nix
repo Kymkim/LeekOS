@@ -8,6 +8,8 @@
     inputs.home-manager.nixosModules.default
   ];
 
+
+
   #Framework16 Specific Stuff
   boot.kernelParams = [ "amdgpu.abmlevel=0" ];
   services.udev.extraRules = ''
@@ -19,7 +21,9 @@
   environment.systemPackages = with pkgs; [
     gh
     git
+
   ];
+  
   services.tailscale.enable = true; 
   services.gvfs.enable = true;
   programs.steam = {
@@ -29,8 +33,6 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-
-  # Minimal system configuration. Setting locale, keyboard, enabling flakes, home-manager etc.
   # Locale and Keyboard
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";

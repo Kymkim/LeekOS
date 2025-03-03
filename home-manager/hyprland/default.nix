@@ -21,7 +21,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$launcher" = "rofi";
-      "$browser" = "firefox";
+      "$browser" = "zen";
 
       bindm = [
         "$mod, mouse:272, movewindow"
