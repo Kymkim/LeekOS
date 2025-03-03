@@ -21,6 +21,7 @@
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$launcher" = "rofi";
+      "$browser" = "firefox";
 
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -45,7 +46,7 @@
       
         #App Shortcuts
         "$mod, RETURN, exec, $terminal"
-        "$mod, F, exec, firefox"
+        "$mod, B, exec, $browser"
         "$mod, O, exec, obsidian"
         "$mod, V, exec, code"
 
@@ -106,7 +107,6 @@
 
       decoration = {
         rounding = 10;
-        rounding_power = 4.0;
         blur = {
           enabled = true;
         };

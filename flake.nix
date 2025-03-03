@@ -14,9 +14,6 @@ outputs = { self, nixpkgs, home-manager, ... }@inputs:
 		system = "x86_64-linux";
 		pkgs = nixpkgs.legacyPackages.${system};
 	in {
-
-		#NixOsConfigurations contains all of the applications that I need
-		#In my case I have two config, one for my FrameworkLaptop16 and one for my PC
 		nixosConfigurations = {
 			default = lib.nixosSystem {
 				inherit system;

@@ -14,6 +14,7 @@
         obs-studio
         neofetch
         pwvucontrol
+        (callPackage ../../pkgs/zen-browser.nix{})
     ];
 
     nixpkgs.config = {
