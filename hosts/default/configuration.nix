@@ -1,4 +1,5 @@
 { config, pkgs, inputs, ... }:
+
 {
 
   imports = [ 
@@ -7,31 +8,28 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  #Framework16 Specific Stuff
+  boot.kernelParams = [ "amdgpu.abmlevel=0" ];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0012", ATTR{power/wakeup}="disabled", ATTR{driver/1-1.1.1.4/power/wakeup}="disabled"
+    SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="32ac", ATTRS{idProduct}=="0014", ATTR{power/wakeup}="disabled", ATTR{driver/1-1.1.1.4/power/wakeup}="disabled"
+  '';
+
   # Additional packages if needed
   environment.systemPackages = with pkgs; [
     gh
     git
-    lxqt.lxqt-policykit
-    kicad
-    uv
-    python39
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
-        ms-python.python
-        ms-azuretools.vscode-docker
-        ms-vscode-remote.remote-ssh
-        github.copilot
-      ];
-    })
-    asunder
-    makemkv
-    vlc
-    heroic
-    
   ];
+  
+  services.tailscale.enable = true; 
+  services.gvfs.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
 
-  # Minimal system configuration. Setting locale, keyboard, enabling flakes, home-manager etc.
   # Locale and Keyboard
   time.timeZone = "America/Los_Angeles";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -48,16 +46,23 @@
   };
   console.keyMap = "us";
 
+  #Networking
+  networking.networkmanager.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ukimnix = {
     isNormalUser = true;
+    initialPassword = "HatsuneMiku";
     description = "Kim";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnfreePredicate = (_: true);
+  };
 
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -70,6 +75,12 @@
     };
   };
 
+  #Hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
   # No touchie
   system.stateVersion = "24.05";
 
@@ -80,17 +91,9 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
-    gfxmodeBios = "1280x1024";
-    gfxmodeEfi = "1280x1024";
   };
 
-  #Hyprland so SDDM can see it
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  services.tailscale.enable = true; 
+  networking.hostName = "LeekOS-Desktop";
 
   # Automatic garbage collection. And some optimization
   nix = {
@@ -102,5 +105,27 @@
     };
   };
 
+  #Thunar
+  programs.xfconf.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
+
+  services = {
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
+  };
+
+  #Fingerprint and power management
+  services.fprintd.enable = true;
+  services.power-profiles-daemon.enable = true;
 
 }

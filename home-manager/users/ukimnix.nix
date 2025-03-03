@@ -11,6 +11,7 @@
     ../fnott
     ../hyprland
     ../wallpaper/live.nix
+    ../waybar
   ];
 
   programs.home-manager = {

@@ -10,7 +10,7 @@
   #  - Tertiary Accent: #c7ede4
 
   home.packages = with pkgs; [
-    hyprshot
+    xorg.xev #For keybind codes
   ];
 
   wayland.windowManager.hyprland = {
@@ -26,6 +26,10 @@
         "$mod, mouse:272, movewindow"
       ];
 
+      exec-once = [
+        "waybar"
+      ];
+
       bind = 
       [
         #Window Shortcuts
@@ -36,9 +40,9 @@
         "$mod, X, fullscreen"
         "$mod, C, pin"
         "ALT, TAB, cyclenext"
+        "$mod, code:49, exec, pkill waybar || waybar"
 
-        
-
+      
         #App Shortcuts
         "$mod, RETURN, exec, $terminal"
         "$mod, F, exec, firefox"
@@ -139,7 +143,7 @@
       ];
 
       "workspace" = [
-        "special:board, gapsin:0, gapsout:0"
+        "special:board, gapsin:0, gapsout:0, rounding:0"
       ];
     };
   };
