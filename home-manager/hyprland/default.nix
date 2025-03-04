@@ -11,13 +11,14 @@
 
   home.packages = with pkgs; [
     xorg.xev #For keybind codes
+    quintom-cursor-theme
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
 
     settings = {
-                                 
+                   
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       "$launcher" = "rofi";
@@ -86,11 +87,14 @@
       ];
 
       monitor = [
-        "eDP-1, preferred, auto, 1.25"
+        "eDP-1, preferred, auto, 1"
       ];
 
       env = [
         "XCURSOR_SIZE, 32"
+        "HYPRCURSOR_THEME,Quintom_Ink"
+        "HYPRCURSOR_SIZE,24"
+        "QT_CURSORSIZE, 32"
       ];
 
       general = {
@@ -106,7 +110,7 @@
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 20;
         blur = {
           enabled = true;
         };
@@ -133,13 +137,9 @@
         middle_click_paste = false;
       };
 
-      xwayland = {
-        enabled = true;
-        force_zero_scaling = true;
-      };
-
       windowrulev2 = [
         "float, class:kitty, title:kitty"
+        "rounding 5, class:zen"
       ];
 
       "workspace" = [

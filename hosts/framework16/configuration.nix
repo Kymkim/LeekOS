@@ -21,11 +21,10 @@
   environment.systemPackages = with pkgs; [
     gh
     git
-
+    file-roller
   ];
   
   services.tailscale.enable = true; 
-  services.gvfs.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -57,7 +56,7 @@
     isNormalUser = true;
     initialPassword = "HatsuneMiku";
     description = "Kim";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [];
   };
 
@@ -110,6 +109,8 @@
 
   #Thunar
   programs.xfconf.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [

@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
 
-
     home.packages = with pkgs; [
         kitty
         rofi
@@ -14,6 +13,7 @@
         obs-studio
         neofetch
         pwvucontrol
+        zoom-us
         (callPackage ../../pkgs/zen-browser.nix{}) #Temporary Fix Till Zen Browser is in Nixpkgs
 
     ];
