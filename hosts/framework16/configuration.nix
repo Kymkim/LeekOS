@@ -8,7 +8,20 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.droid-sans-mono 
+  ];
 
+  services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
 
   #Framework16 Specific Stuff
   boot.kernelParams = [ "amdgpu.abmlevel=0" ];
@@ -22,6 +35,9 @@
     gh
     git
     file-roller
+    framework-tool
+    brightnessctl
+    wluma
   ];
   
   services.tailscale.enable = true; 

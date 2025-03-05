@@ -30,6 +30,7 @@
 
       exec-once = [
         "waybar"
+        "wluma"
       ];
 
       bind = 
@@ -73,9 +74,9 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
-      ];
-
-      bindel = [
+        
+        ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+        ",XF86MonBrightnessUp, exec, brightnessctl s +10%"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
@@ -88,6 +89,7 @@
 
       monitor = [
         "eDP-1, preferred, auto, 1"
+        "DP-2, preferred, auto, 1"
       ];
 
       env = [
@@ -103,14 +105,13 @@
         border_size = 0;
         resize_on_border = true;
         hover_icon_on_border = true;
-        layout = "hy3";
         snap = {
           enabled = true;
         };
       };
 
       decoration = {
-        rounding = 20;
+        rounding = 10;
         blur = {
           enabled = true;
         };
@@ -139,7 +140,6 @@
 
       windowrulev2 = [
         "float, class:kitty, title:kitty"
-        "rounding 5, class:zen"
       ];
 
       "workspace" = [

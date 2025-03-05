@@ -14,6 +14,7 @@
         neofetch
         pwvucontrol
         zoom-us
+        unityhub
         (callPackage ../../pkgs/zen-browser.nix{}) #Temporary Fix Till Zen Browser is in Nixpkgs
 
     ];
