@@ -37,7 +37,6 @@
     file-roller
     framework-tool
     brightnessctl
-    wluma
   ];
   
   services.tailscale.enable = true; 
