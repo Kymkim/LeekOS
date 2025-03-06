@@ -110,18 +110,23 @@
                 border: none;
                 background: #000000;
                 color: #FFFFFF;
+                font-size: 20px;
             }
+
             #clock{
-                padding: 0 10px;
+                padding: 0 20px;
             }
+
             #workspaces button{
                 box-shadow: none;
                 border-radius: 90px;
                 padding: 0px;
+                font-size: 25px;
             }
             #workspaces button.active {
                 color: #000000;
                 background-color: #ffffff;
+                font-size: 30px;
             }
 
             #backlight-slider slider {
@@ -138,7 +143,7 @@
             }
 
             #battery {
-                padding: 0 10px
+                padding: 0 20px
             }
             #battery.normal{
                 color: white;
@@ -160,7 +165,7 @@
             }
 
             #wireplumber {
-                padding: 0 10px
+                padding: 0 20px;
             }
         '';
     };

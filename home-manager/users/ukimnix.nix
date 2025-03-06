@@ -12,6 +12,7 @@
     ../hyprland
     ../wallpaper/live.nix
     ../waybar
+    ../terminal
   ];
 
 

@@ -49,11 +49,13 @@
         #App Shortcuts
         "$mod, RETURN, exec, $terminal"
         "$mod, B, exec, $browser"
+        "$mod, D, exec, webcord"
         "$mod, O, exec, obsidian"
         "$mod, V, exec, code"
 
         
         "$mod, TAB, togglespecialworkspace, board"
+        "$mod SHIFT, TAB, movetoworkspacesilent, special:board"
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -139,7 +141,12 @@
       };
 
       windowrulev2 = [
+        "size 1000 610, class:kitty, title:kitty"
         "float, class:kitty, title:kitty"
+        "bordersize 1, class:kitty, title:kitty"
+        "size 1000 610, class:Plexamp, title:Plexamp"
+        "float, class:Plexamp, title:Plexamp"
+        "bordersize 1, class:Plexamp, title:Plexamp"
       ];
 
       "workspace" = [
