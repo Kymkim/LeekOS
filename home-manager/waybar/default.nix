@@ -75,6 +75,7 @@
                 ];
 
                 modules-right = [
+                    "network"
                     "wireplumber"
                 ];
 
@@ -99,6 +100,12 @@
                     max = 100;
                     orientation = "vertical";
                     device = "intel_backlight";
+                };
+
+                "network" = {
+                    interface = "wlp2s0";
+                    format = "{ifname}";
+                    format-wifi = "";
                 };
 
             };

@@ -4,7 +4,6 @@
     home.packages = with pkgs; [
         kitty
         rofi
-        vscode
         obsidian
         webcord
         plexamp
@@ -18,6 +17,15 @@
         (callPackage ../../pkgs/zen-browser.nix{}) #Temporary Fix Till Zen Browser is in Nixpkgs
 
     ];
+
+    programs.vscode = {
+        enable = true;
+        extensions = with pkgs.vscode-extensions; [
+            dracula-theme.theme-dracula
+            yzhang.markdown-all-in-one
+            #ms-python.python
+        ];
+    };
 
     nixpkgs.config = {
         allowUnfree = true;
