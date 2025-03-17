@@ -17,7 +17,7 @@ One of the biggest pain points for me has been NixOS’s lack of FHS (Filesystem
 
 After much deliberation, I’ve decided to return to Arch Linux. I’ll definitely miss the declarative package management that NixOS offers—the benefits are undeniable, and for many, it’s a game-changer. However, for my specific use case, the trade-offs just don’t align with my workflow. Arch’s simplicity, flexibility, and the vast resources available in its community feel like a better fit for me right now.
 
-This repo will be archived once I have published my dotfiles :)
+This repo will be archived once I have published my dotfiles
 
 
 ## Artwork Removal Request
